@@ -1,0 +1,42 @@
+const ages = [3, 9, 23, 64, 2, 8, 28, 93]//Creates new array with the following values
+
+function arraySubtraction(ages){//Function to be reused to recalculate the array if it changes
+	firstElement = ages[0];//Refers to first element in array 
+  lastElement = (ages.length - 1);//Refer to last element of array
+  return lastElement - firstElement;//Calculates the differnece between the two elements
+}
+
+arrayDifference = arraySubtraction(ages)//Sets a variable to the function so it can be printed
+console.log(arrayDifference)//Prints difference to the console
+
+ages.push(48)//Pushes new number to array
+
+arrayDifference2 = arraySubtraction(ages) //Runs function once again to incorporate new number
+console.log(arrayDifference2)//Prints new difference to console
+
+function arrayAverage(ages){//Function is reusable to calculate average for any array
+	var total = 0;//Sets total value to 0 to be used in loop to add sum of elements from the array
+  for(var i = 0; i < ages.length; i++) {//The loop adds each element of the array 
+    total += ages[i];//Adds the value of the elements to the total variable
+	} 
+	var average = total / ages.length; //creates the average variable to calculate the total/array length
+  return average;//returns the average calculation 
+}
+
+calculatedAverage = arrayAverage(ages);//Sets function to calculatedAverage so it can print
+console.log(calculatedAverage);//Prints the calculatedAverage
+
+
+const names = ["Sam", "Tommy", "Tim", "sally", "Buck", "Bob"]
+
+function nameLetterAverage(names){//New function to calculate average charatcers in array
+	average = names.join("").length / names.length//names.join('') combines all the strings and .length outputs how many chracters there are. 
+  return average//This is then divided by the length of the string
+  }
+
+letterAverage = nameLetterAverage(names)
+console.log(letterAverage)
+
+
+console.log(names.join(" "))
+

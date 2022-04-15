@@ -1,42 +1,205 @@
-const ages = [3, 9, 23, 64, 2, 8, 28, 93]//Creates new array with the following values
+//1 COMPLETE
 
-function arraySubtraction(ages){//Function to be reused to recalculate the array if it changes
-	firstElement = ages[0];//Refers to first element in array 
-  lastElement = (ages.length - 1);//Refer to last element of array
-  return lastElement - firstElement;//Calculates the differnece between the two elements
+const ages = [3, 9, 23, 64, 2, 8, 28, 93];//Creates new array with the following values
+
+//1.a COMPLETE
+
+function arraySubtraction(ages) {//Function to be reused to recalculate the array if it changes
+    firstElement = ages[0];//Refers to first element in array 
+    lastElement = ages[ages.length - 1];//Refer to last element of array
+    return lastElement - firstElement;//Calculates the differnece between the two elements
 }
 
-arrayDifference = arraySubtraction(ages)//Sets a variable to the function so it can be printed
-console.log(arrayDifference)//Prints difference to the console
+console.log(arraySubtraction(ages));//Prints difference to the console
 
-ages.push(48)//Pushes new number to array
+//1.b COMPLETE
 
-arrayDifference2 = arraySubtraction(ages) //Runs function once again to incorporate new number
-console.log(arrayDifference2)//Prints new difference to console
+ages.push(48);//Pushes new number to array
+
+console.log(arraySubtraction(ages));//Runs the function again after the new number has been pushed
+
+//1.c COMPLETE
 
 function arrayAverage(ages){//Function is reusable to calculate average for any array
-	var total = 0;//Sets total value to 0 to be used in loop to add sum of elements from the array
-  for(var i = 0; i < ages.length; i++) {//The loop adds each element of the array 
-    total += ages[i];//Adds the value of the elements to the total variable
+    var total = 0;//Sets total value to 0 to be used in loop to add sum of elements from the array
+    for(var i = 0; i < ages.length; i++) {//The loop adds each element of the array 
+        total += ages[i];//Adds the value of the elements to the total variable
 	} 
-	var average = total / ages.length; //creates the average variable to calculate the total/array length
-  return average;//returns the average calculation 
+    var average = total / ages.length; //creates the average variable to calculate the total/array length
+    return average;//returns the average calculation 
 }
 
-calculatedAverage = arrayAverage(ages);//Sets function to calculatedAverage so it can print
-console.log(calculatedAverage);//Prints the calculatedAverage
+console.log(arrayAverage(ages));//Prints the calculatedAverage
 
+//2 COMPLETE
+const names = ["Sam", "Tommy", "Tim", "sally", "Buck", "Bob"];
 
-const names = ["Sam", "Tommy", "Tim", "sally", "Buck", "Bob"]
+//2.a COMPLETE
 
-function nameLetterAverage(names){//New function to calculate average charatcers in array
-	average = names.join("").length / names.length//names.join('') combines all the strings and .length outputs how many chracters there are. 
-  return average//This is then divided by the length of the string
+function nameLetterAverage(names) {//New function to calculate average letters in array
+    var stringLength = 0;
+    for(let i = 0; i < names.length; i++) {//Loop continues from the length of string
+        stringLength += names[i].length;//Pulls the characters from the element i is reffering to
+    }
+    var averageLength = stringLength / names.length;//variable average refers to the sum divided by amount of elements in array
+    return averageLength;
   }
 
-letterAverage = nameLetterAverage(names)
-console.log(letterAverage)
+console.log(nameLetterAverage(names));//prints average to console
+
+//2.b COMPLETE
+
+function nameSeperator(names) {
+    var nameIndividual = ""//Set the variable to a blank string
+    for(let i = 0; i < names.length; i++) {//Repeats till it hits the ned of the string
+        nameIndividual += names[i] + " "//Refers to the names in their specific position   
+    }
+    return nameIndividual//Prints each name with the space after and repeats it
+}
+
+console.log(nameSeperator(names))//Prints the seperated names to the console
 
 
-console.log(names.join(" "))
+//5 COMPLETE
 
+const nameLengths = []
+
+var test = 0
+
+ for(let i = 0; i < names.length; i++) {//repeats until it hits the last element in the array
+     test = names[i].length//i refers to what element in the array it is pointing to and length is how many characters there are
+     nameLengths.push(test)//pushes the number to the array
+ }
+ 
+console.log(nameLengths)
+
+//6 COMPLETE
+
+var stringLength = 0
+
+for (let i = 0; i < nameLengths.length; i++) {//Loop pulls from the lastArray created
+    stringLength += nameLengths[i];//Summarizes all elements fromt he loop
+}
+
+console.log(stringLength);
+
+//7 COMPLETE
+
+var word = "Joshua";
+var n = 3;
+
+function nameRepeater(variable1, variable2){//Function accepts two variables
+    repeated = "";//Sets repeated to be a blank string
+    repeated = variable1.repeat(variable2);//repeated becomes a .repeat function with the 2 variables
+    return repeated;
+}
+
+console.log(nameRepeater(word, n));//Fills the function with the two variables that are stated
+
+//8 COMPLETE
+
+var firstName = "Joshua"//Variable for name to be inserted in function
+var lastName = "Pacheco"//Variable for last name to be inserted
+
+function nameConcatenator(firstName, lastName){//Function takes two elements
+    var fullName = "";//Full name is set to a blank string to be filled when combined
+    fullName = firstName + " " + lastName;//Full name now equals to the two variables with a space
+    return fullName;
+}
+
+console.log(nameConcatenator(firstName, lastName));//Prints the new full name to the console
+
+//9 COMPLETE
+
+const array1 = [34, 28, 53, 45, 58, 72];//New array for the function
+
+function arrayOver100(array1){
+    var arraySum = 0;
+
+    for (let i = 0; i < array1.length; i++) {//Loops to sum array
+        arraySum += array1[i];
+    }
+    if(arraySum > 100){//If statement to determine if arraySum is over 100
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(arrayOver100(array1));
+
+//10 COMPLETE
+
+function arrayAveraged(array1){//One element for function
+    var arrayCounted = 0;//Sum of the array
+
+    for (let i = 0; i < array1.length; i++) {//Loop to count array
+        arrayCounted += array1[i];
+    }
+    
+    var array1Average = arrayCounted / array1.length;//Variable to run calculation for average
+    return array1Average;//Returns average to console
+}
+
+console.log(arrayAveraged(array1))//Prints the function to console, referring to last array
+
+//11 COMPLETE
+
+const array2 = [80, 32, 11, 45, 68, 72];//New array for function
+
+function arrayAverageComparison(firstArray, secondArray){//Two elements for the function
+    var arraySum1 = 0;
+    var arraySum2 = 0;
+
+    for (let i = 0; i < firstArray.length; i++) {//Loop to calculate the sum of array
+        arraySum1 += firstArray[i]};
+
+    for (let i = 0; i < secondArray.length; i++) {//Loop to calculate the sum of array
+        arraySum2 += secondArray[i]};
+    
+    var arrayAverage1 = arraySum1 / firstArray.length;//Variable set to calculate average of the array
+    var arrayAverage2 = arraySum2 / secondArray.length;//Variable set to calculate average of the array
+
+    if(arrayAverage1 > arrayAverage2){ //if else statement returns true if array1 is larger
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(arrayAverageComparison(array1, array2))//Prints the function to console
+
+//12 COMPLETE
+
+var isHotOutside = true;
+var moneyInPocket = 11.00;
+
+function willBuyDrink(element1, element2) {
+    if (element1 == true && element2 >= 10.50){ //if statement to determine if both statements meet the condition to return true
+        return true;
+        } else { //else statement if the above conditions aren't meant to return false
+            return false;
+        }
+    }
+
+console.log(willBuyDrink(isHotOutside, moneyInPocket));
+
+//13 COMPLETE
+//This function picks a random game from the string to sell if the collection is too big
+//If the array is greater than or equal to 4 then it will say what game to sell
+//If the array is smaller than there is no reason to sell
+
+collection1 = ["Zelda", "Mario", "Pokemon", "Metroid"];
+specificGame = "";
+
+function howManyGames(game, collection) {
+    game = collection[Math.floor(Math.random()*collection.length)];//This function is the randomizer
+    
+    if(collection.length >= 4){
+        return ("You need to get rid of " + game);//Game is set to the random gave above and will add to this string
+    } else {
+        return ("No need to sell anything");//this string is spit back out when the string is smaller than 4
+    }
+}
+
+console.log(howManyGames(specificGame, collection1));
